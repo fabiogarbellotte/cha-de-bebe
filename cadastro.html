@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo2.css">
+    <link rel="icon" type="imagem/png" href="imagens/icone4.jpg" />
+    <title>CONVITE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<script src="sweetalert.js"></script>
+</head>
+<body>
+    <div class="todo">
+    <div class="conteudo">
+        <div class="btn-voltar">
+            <a href="index.html">VOLTAR</a>
+        </div>
+      <div class="form">
+        <form id="formulario" name="formulario" action="cadastro.html" method="POST" data-netlify="true">
+            <h1>Confirme sua presença</h1>
+            <input id="nome"  type="text" name="name" placeholder="Nome e sobrenome" maxlength="40">
+            <input id="#submit" type="submit" value="CONFIRMAR">
+        </form>
+        <img src="imagens/gael2.jpeg" alt="">
+     </div> 
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('a').hide();
+        $('a').delay(800);
+        $('a').fadeIn("slow");
+    });
+</script>
+<script type="text/javascript">
+   $(document).ready(function($){
+                    const $form = $('#formulario');
+                      $form.submit(e =>{
+                        e.preventDefault();
+                            const $action = $form.attr('cadastro.html');
+                            const $data = $form.serialize();
+                            $.post($action,$data).then(()=>{
+                            Swal.fire({
+                        icon: 'success',
+                        title: 'CONFIRMADO',
+                        text:'Esperamos por você!',
+                        showConfirmButton: false,
+                        timer: 1500
+            
+            });
+                        });
+                    });
+                })
+</script>
+</body>
+</html>
